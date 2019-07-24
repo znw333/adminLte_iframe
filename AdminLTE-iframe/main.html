@@ -87,15 +87,20 @@
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">导航栏</li>
+                    <li class="header">菜单栏</li>
                     <li class="active">
-                        <a href="javascript:;" data-url="table.html" onclick="meunClick(this)">
+                        <a href="javascript:;" data-url="dashboard.html" onclick="meunClick(this)">
                             <i class="fa fa-home"></i><span>首页</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;" data-url="form.html" onclick="meunClick(this)">
-                            <i class="fa fa-home"></i><span>菜单一级</span>
+                            <i class="fa fa-home"></i><span>表单</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:;" data-url="table.html" onclick="meunClick(this)">
+                            <i class="fa fa-home"></i><span>网格</span>
                         </a>
                     </li>
                     <li class="treeview">
@@ -107,12 +112,12 @@
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="javascript:;"  data-url="table.html" onclick="meunClick(this)">
+                                <a href="javascript:;" data-url="table.html" onclick="meunClick(this)">
                                     <i class="fa fa-circle-o"></i><span>菜单二级</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:;"  data-url="form.html" onclick="meunClick(this)">
+                                <a href="javascript:;" data-url="form.html" onclick="meunClick(this)">
                                     <i class="fa fa-circle-o"></i><span>菜单二级</span>
                                 </a>
                             </li>
@@ -144,10 +149,14 @@
             if (data_url && data_url.length > 0) {
                 $('#ifr').attr('src', data_url);
             }
-
             $('.main-sidebar .sidebar-menu li').removeClass('active');
             $(a).parent('li').addClass('active')
         }
+
+        $(function () {
+
+        });
+
     </script>
 
 </body>
