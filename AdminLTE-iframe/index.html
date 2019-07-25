@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title>XXX</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -58,12 +58,12 @@
                         <!-- 个人中心 -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <img src="img/avatar04.png" class="user-image" alt="User Image">
                                 <span class="hidden-xs">张三</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="user-header">
-                                    <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <img src="img/avatar04.png" class="img-circle" alt="User Image">
                                     <p>
                                         XX公司
                                         <small>角色 男</small>
@@ -87,8 +87,7 @@
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">菜单栏</li>
-                    <li class="active">
+                    <li>
                         <a href="javascript:;" data-url="dashboard.html" onclick="meunClick(this)">
                             <i class="fa fa-home"></i><span>首页</span>
                         </a>
@@ -154,7 +153,8 @@
         }
 
         $(function () {
-
+            $('.main-sidebar .sidebar-menu li').removeClass('active');
+            $($('.main-sidebar .sidebar-menu li')[0]).addClass('active');
         });
 
     </script>
