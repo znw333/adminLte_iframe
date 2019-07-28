@@ -15,7 +15,7 @@
     <![endif]-->
 </head>
 
-<body class="hold-transition skin-yellow sidebar-mini">
+<body class="hold-transition skin-yellow fixed">
     <div class="wrapper">
         <header class="main-header">
             <a href="#" class="logo">
@@ -127,15 +127,9 @@
         </aside>
 
         <div class="content-wrapper">
-            <iframe id="ifr" src="form.html" width="100%" height="100%" style="height:750px" frameborder="0"></iframe>
+            <iframe id="ifr" src="form.html" width="100%" height="100%" style="min-height:400px" frameborder="0" onload="SetIframeHieht()"></iframe>
         </div>
 
-        <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-                Anything you want
-            </div>
-            <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
-        </footer>
     </div>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -152,12 +146,28 @@
             $(a).parent('li').addClass('active')
         }
 
+        function SetIframeHieht() {
+            var bodyheight = Math.min(
+                document.body.clientHeight,
+                document.body.offsetHeight,
+                document.body.scrollHeight
+            );
+            var headerheight = Math.max(
+                document.getElementsByClassName('main-header')[0].clientHeight,
+                document.getElementsByClassName('main-header')[0].offsetHeight,
+                document.getElementsByClassName('main-header')[0].scrollHeight
+            );
+            var ifrheight = bodyheight - headerheight - 5;
+            var ifr = document.getElementById('ifr');
+            if (ifr && ifrheight > 0)
+                ifr.style.height = ifrheight + 'px';
+        }
+
         $(function () {
             $('.main-sidebar .sidebar-menu li').removeClass('active');
             $($('.main-sidebar .sidebar-menu li')[0]).addClass('active');
+            SetIframeHieht();
         });
-
     </script>
-
 </body>
 </html>
