@@ -3483,7 +3483,9 @@ table.text-center, table.text-center td, table.text-center th {
 
 .login-box, .register-box {
     width: 360px;
-    margin: 7% auto
+    position:absolute;
+    top:20%;
+    left:40%;
 }
 
 @media (max-width:768px) {
@@ -3494,10 +3496,11 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 .login-box-body, .register-box-body {
-    background: #fff;
+    border-radius:10px 10px;
+    background-color: rgba(0,0,0,0.5);
     padding: 20px;
     border-top: 0;
-    color: #666
+    color: #fff;
 }
 
     .login-box-body .form-control-feedback, .register-box-body .form-control-feedback {
