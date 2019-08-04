@@ -3484,8 +3484,8 @@ table.text-center, table.text-center td, table.text-center th {
 .login-box, .register-box {
     width: 360px;
     position:absolute;
-    top:20%;
-    left:40%;
+    top:31%;
+    left:35%;
 }
 
 @media (max-width:768px) {

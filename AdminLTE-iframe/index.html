@@ -30,7 +30,7 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="javascript:" title="全屏">
+                            <a href="javascript:" class="fullscreen" title="全屏">
                                 <i class="fa fa-arrows-alt"></i>
                             </a>
                         </li>
@@ -52,7 +52,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:" title="退出">
+                            <a href="javascript:" class="exit" title="退出">
                                 <i class="fa fa-sign-out"></i>
                             </a>
                         </li>
@@ -72,10 +72,10 @@
                                 </li>
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">个人中心</a>
+                                        <a href="#" class="btn btn-default btn-flat usercenter">个人中心</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">修改密码</a>
+                                        <a href="#" class="btn btn-default btn-flat resetPassword">重置密码</a>
                                     </div>
                                 </li>
                             </ul>
@@ -88,19 +88,19 @@
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li>
-                        <a href="javascript:;" data-url="dashboard.html" onclick="meunClick(this)">
-                            <i class="fa fa-home"></i><span>首页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-url="form.html" onclick="meunClick(this)">
-                            <i class="fa fa-home"></i><span>表单</span>
-                        </a>
-                    </li>
                     <li class="active">
-                        <a href="javascript:;" data-url="table.html" onclick="meunClick(this)">
-                            <i class="fa fa-home"></i><span>网格</span>
+                        <a href="javascript:;" data-url="dashboard.html">
+                            <i class="fa fa-home"></i><span>仪表中心</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-url="form.html">
+                            <i class="fa fa-bookmark-o"></i><span>表单</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-url="table.html">
+                            <i class="fa fa-table"></i><span>网格</span>
                         </a>
                     </li>
                     <li class="treeview">
@@ -112,13 +112,13 @@
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="javascript:;" data-url="table.html" onclick="meunClick(this)">
-                                    <i class="fa fa-circle-o"></i><span>菜单二级</span>
+                                <a href="javascript:;" data-url="404.html">
+                                    <i class="fa fa-circle-o"></i><span>404</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:;" data-url="form.html" onclick="meunClick(this)">
-                                    <i class="fa fa-circle-o"></i><span>菜单二级</span>
+                                <a href="javascript:;" data-url="500.html">
+                                    <i class="fa fa-circle-o"></i><span>500</span>
                                 </a>
                             </li>
                         </ul>
@@ -128,7 +128,7 @@
         </aside>
 
         <div class="content-wrapper">
-            <iframe id="ifr" src="form.html" width="100%" height="100%" style="min-height:400px" frameborder="0" onload="SetIframeHieht()"></iframe>
+            <iframe id="ifr" src="dashboard.html" width="100%" height="100%" style="min-height:400px" frameborder="0" onload="SetIframeHieht()"></iframe>
         </div>
 
     </div>
@@ -138,15 +138,6 @@
     <script type="text/javascript" src="js/fastclick.js"></script>
     <script type="text/javascript" src="js/adminlte.min.js"></script>
     <script type="text/javascript">
-        function meunClick(a) {
-            var data_url = $(a).attr('data-url');
-            if (data_url && data_url.length > 0) {
-                $('#ifr').attr('src', data_url);
-            }
-            $('.main-sidebar .sidebar-menu li').removeClass('active');
-            $(a).parent('li').addClass('active')
-        }
-
         function SetIframeHieht() {
             var bodyheight = Math.min(
                 document.body.clientHeight,
@@ -164,10 +155,78 @@
                 ifr.style.height = ifrheight + 'px';
         }
 
+        function requestFullScreen(element) {
+            var requestMethod = element.requestFullScreen || //W3C
+                element.webkitRequestFullScreen || //FireFox
+                element.mozRequestFullScreen || //Chrome等
+                element.msRequestFullScreen; //IE11
+            if (requestMethod) {
+                requestMethod.call(element);
+            } else if (typeof window.ActiveXObject !== "undefined") { //for Internet Explorer
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript)
+                    wscript.SendKeys("{F11}");
+            }
+        };
+
+        function exitFull() {
+            var exitMethod = document.exitFullscreen || //W3C
+                document.mozCancelFullScreen || //FireFox
+                document.webkitExitFullscreen || //Chrome等
+                document.webkitExitFullscreen; //IE11
+            if (exitMethod) {
+                exitMethod.call(document);
+            } else if (typeof window.ActiveXObject !== "undefined") { //for Internet Explorer
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript)
+                    wscript.SendKeys("{F11}");
+            }
+        };
+
+        function openUrl(url) {
+            if (url) $('#ifr').attr('src', url);
+        }
+
         $(function () {
+            //默认菜单样式
             $('.main-sidebar .sidebar-menu li').removeClass('active');
             $($('.main-sidebar .sidebar-menu li')[0]).addClass('active');
+            //设置高度
             SetIframeHieht();
+            //菜单点击
+            $('.main-sidebar ul li a').click(function () {
+                var data_url = $(this).attr('data-url');
+                if (data_url && data_url.length > 0) {
+                    $('#ifr').attr('src', data_url);
+
+                    $('.main-sidebar .sidebar-menu li').removeClass('active');
+                    $(this).parent('li').addClass('active');
+                }
+            });
+            //全屏
+            $('.navbar-custom-menu .fullscreen').click(function (e) {
+                var el = e.srcElement || e.target;//target兼容Firefox
+                if (el.title == '全屏') {
+                    el.title = '退出全屏';
+                    requestFullScreen(document.documentElement);
+                }
+                else {
+                    el.title = '全屏';
+                    exitFull();
+                }
+            });
+            //退出
+            $('.navbar-custom-menu .exit').click(function () {
+                window.location.href = 'login.html';
+            });
+            //重置密码
+            $('.navbar-custom-menu .resetPassword').click(function () {
+                openUrl('resetpassword.html');
+            });
+            //个人中心
+            $('.navbar-custom-menu .usercenter').click(function () {
+                openUrl('usercenter.html');
+            });
         });
     </script>
 </body>
