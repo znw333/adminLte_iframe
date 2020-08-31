@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>N+ V0.2</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <style type="text/css">
+        body {
+            background-color: #326696;
+            /* background: url(&quot;data:image/png;base64,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qxKAKNV29bzHrqbr6n6PPae0q+cDNhP+EAKgxWpLADpv2NX7EZsJu3o/YA3J1N6PqVqOWMzmBGSV0vgeM61XUHsCadJc/exuvIBjn7DF6qlRQBoZ+eq5UuwEIKft4AKm9X3C+gERAFtXPK3vT2wmdALiG13TGx4lI5b+aQVkc+fqP5pcgP6y5qIw045/xmbCJAC0pHP68c/YXiAC1PYVhY3V8fumn/iMzYSeANCQTD/xBdsLcgHpXDJ/JINK7AQALwMXMKP/L+y84Yz+L/4IiHDFo2S1Ykcgvk4oPI41Yy8gLN1ADM2sAGAnKEwuAOIHZpz8is2EcAEzT37Fzp6LALV5wtp5yZmn/sZmwiggWsLwFNSKrQDoYrZcgMrzv/Z9x04A8DJwAbNO/4MdnIoA2DoiJwC5jqhKQPQDYZygEVsBwE5QmFwAxA/MOvMNmwnhAmaf+YYdnIoA0AKKwswe+BebCX8IAalYrv/+ANcEYkggfsAJAF6eAPCiABIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgATiB/wBzFCJkv6PAjAAAAABJRU5ErkJggg==&quot;); */
+            margin: 0px;
+            overflow: hidden;
+            font-family:Monospace;
+            font-size:13px;
+            text-align:center;
+            font-weight: bold;
+            text-align:center;
+        }
+        a {
+            color:#0078ff;
+        }
+        .login-title {
+            text-align: center;
+            font-size: 36px;
+            margin: 0.67em 0px;
+            line-height: 1.1;
+        }
+
+            .login-title small {
+                font-size: 20px;
+            }
+    </style>
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-box-body">
+            <p class="login-title">
+                <b>N+</b>
+                <small>V0.1</small>
+            </p>
+            <!--post-->
+            <form action="index.html" method="get">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="User">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <!--
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label class="">
+                                <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                    <input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;" />
+                                    <ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                </div> 记住我
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <div class="row" style="margin-bottom:15px">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-warning btn-block btn-flat" style="border-radius: 0.3em;">登 录</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="/js/account/forgetPwd" class="pull-left" style="color:white!important">忘记密码</a>
+                        <div class="dropdown pull-right">
+                            <a href="javascript:" style="color:white!important" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">
+                                <i class="fa icon-globe"></i><span>简体中文</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/js/lang/zh_CN">简体中文</a></li>
+                                <li><a href="/js/lang/en">English</a></li>
+                                <li><a href="/js/lang/ja_JP">日本語</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/ThreeWebGL.js"></script>
+    <script type="text/javascript" src="js/ThreeExtras.js"></script>
+    <script type="text/javascript" src="js/Detector.js"></script>
+    <script type="text/javascript" src="js/RequestAnimationFrame.js"></script>
+    <script id="vs" type="x-shader/x-vertex">
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+    </script>
+    <script id="fs" type="x-shader/x-fragment">
+        uniform sampler2D map;
+        uniform vec3 fogColor;
+        uniform float fogNear;
+        uniform float fogFar;
+        varying vec2 vUv;
+        void main() {
+            float depth = gl_FragCoord.z / gl_FragCoord.w;
+            float fogFactor = smoothstep( fogNear, fogFar, depth );
+            gl_FragColor = texture2D( map, vUv );
+            gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+            gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+        }
+    </script>
+    <script type="text/javascript">
+        if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+        // Bg gradient
+        var canvas = document.createElement('canvas');
+        canvas.width = 32;
+        canvas.height = window.innerHeight;
+        var context = canvas.getContext('2d');
+        var gradient = context.createLinearGradient( 0, 0, 0, canvas.height );
+        gradient.addColorStop(0, "#1e4877");
+        gradient.addColorStop(0.5, "#4584b4");
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        document.body.style.background = 'url(' + canvas.toDataURL('img/png') + ')';
+        // Clouds
+        var container;
+        var camera, scene, renderer, sky, mesh, geometry, material,
+        i, h, color, colors = [], sprite, size, x, y, z;
+        var mouseX = 0, mouseY = 0;
+        var start_time = new Date().getTime();
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+        init();
+        animate();
+
+        function init() {
+            container = document.createElement('div');
+            document.body.appendChild( container );
+            camera = new THREE.Camera( 30, window.innerWidth / window.innerHeight, 1, 3000 );
+            camera.position.z = 6000;
+            scene = new THREE.Scene();
+            geometry = new THREE.Geometry();
+            var texture = THREE.ImageUtils.loadTexture('img/cloud.png');
+            texture.magFilter = THREE.LinearMipMapLinearFilter;
+            texture.minFilter = THREE.LinearMipMapLinearFilter;
+            var fog = new THREE.Fog( 0x4584b4, - 100, 3000 );
+            material = new THREE.MeshShaderMaterial( {
+                uniforms: {
+                    "map": { type: "t", value:2, texture: texture },
+                    "fogColor" : { type: "c", value: fog.color },
+                    "fogNear" : { type: "f", value: fog.near },
+                    "fogFar" : { type: "f", value: fog.far },
+                },
+                vertexShader: document.getElementById( 'vs' ).textContent,
+                fragmentShader: document.getElementById( 'fs' ).textContent,
+                depthTest: false
+            } );
+            var plane = new THREE.Mesh( new THREE.Plane( 64, 64 ) );
+            for ( i = 0; i < 8000; i++ ) {
+                plane.position.x = Math.random() * 1000 - 500;
+                plane.position.y = - Math.random() * Math.random() * 200 - 15;
+                plane.position.z = i;
+                plane.rotation.z = Math.random() * Math.PI;
+                plane.scale.x = plane.scale.y = Math.random() * Math.random() * 1.5 + 0.5;
+                GeometryUtils.merge( geometry, plane );
+            }
+            mesh = new THREE.Mesh( geometry, material );
+            scene.addObject( mesh );
+            mesh = new THREE.Mesh( geometry, material );
+            mesh.position.z = - 8000;
+            scene.addObject( mesh );
+            renderer = new THREE.WebGLRenderer( { antialias: false } );
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            container.appendChild( renderer.domElement );
+            document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+            window.addEventListener( 'resize', onWindowResize, false );
+        }
+
+        function onDocumentMouseMove( event ) {
+            mouseX = ( event.clientX - windowHalfX ) * 0.25;
+            mouseY = ( event.clientY - windowHalfY ) * 0.15;
+        }
+
+        function onWindowResize( event ) {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize( window.innerWidth, window.innerHeight );
+        }
+
+        function animate() {
+            requestAnimationFrame( animate );
+            render();
+        }
+
+        function render() {
+            position = ( ( new Date().getTime() - start_time ) * 0.03 ) % 8000;
+            camera.position.x += ( mouseX - camera.target.position.x ) * 0.01;
+            camera.position.y += ( - mouseY - camera.target.position.y ) * 0.01;
+            camera.position.z = - position + 8000;
+            camera.target.position.x = camera.position.x;
+            camera.target.position.y = camera.position.y;
+            camera.target.position.z = camera.position.z - 1000;
+            renderer.render( scene, camera );
+        }
+    </script>
+</body>
+</html>
